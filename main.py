@@ -29,10 +29,10 @@ def get_weather(city): #получение погоды
             wind_speed = round(data['wind']['speed']) #скорость ветра
             
             result = [
-                f"**Погода в городе {city_name} сейчас:**",
+                f"**Погода в {city_name} сейчас:**",
                 "",
                 f"🌡️ **Температура:** {temp}°C (Ощущается как: {feels_like}°C)",
-                f"☁️ **Состояние:** {description}",
+                f"☁️ **Небо:** {description}",
                 f"💨 **Скорость ветра:** {wind_speed} м/с",
                 f"💧 **Влажность:** {humidity}%",
                 f"🧭 **Давление:** {pressure} гПа" 
@@ -103,7 +103,7 @@ def weather(message):
 
 @bot.message_handler(commands=['info'])
 def info(message):
-    bot.send_message(message.chat.id, "Погодник 1.1, использую OpenWeatherMap API.", parse_mode="Markdown")
+    bot.send_message(message.chat.id, "Погодник 1.1, использую OpenWeatherMap API. Мой разработчик @norkolay", parse_mode="Markdown")
 
 @bot.message_handler(commands=['help', 'commands'])
 def help(message):
